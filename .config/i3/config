@@ -123,6 +123,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -206,6 +208,9 @@ bindsym Mod1+Insert exec /home/popcorn9499/Scripts/counterTools/start.sh counter
 
 bindsym Mod1+Home exec /home/popcorn9499/Scripts/counterTools/start.sh counterDown.py
 
+bindsym Control+Print exec /home/popcorn9499/Scripts/uploader/selectionScreenshot.sh
+bindsym --release Print exec /home/popcorn9499/Scripts/uploader/fullScreenshot.sh
+bindsym Control+Shift+Print exec /home/popcorn9499/Scripts/uploader/windowScreenshot.sh
 
 
 ## Plasma Integration
