@@ -138,3 +138,27 @@
 \.config/kactivitymanagerd-switcher
 
 \.config/kactivitymanagerd-statsrc
+
+Scripts/hangups_auth\.py
+
+Scripts/floppyBackup\.sh
+
+Scripts/dirList\.sh
+
+Scripts/archive\.zip
+
+Scripts/\.vbanTolaptop\.sh\.kate-swp
+
+Scripts/Speedtester/
+
+Scripts/test\.py
+
+Scripts/test
+
+Scripts/vbanTolaptop\.sh
+
+Scripts/wallpaper\.log
+
+Scripts/speedtest-cli
+
+Scripts/__pycache__/
