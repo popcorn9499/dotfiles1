@@ -162,3 +162,5 @@ Scripts/wallpaper\.log
 Scripts/speedtest-cli
 
 Scripts/__pycache__/
+
+\.Xauthority
