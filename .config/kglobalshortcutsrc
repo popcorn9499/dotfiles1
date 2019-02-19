@@ -4,7 +4,7 @@ switch-to-activity-286c8004-c650-4b3b-a744-ecbc7584dc99=none,none,Switch to acti
 
 [KDE Keyboard Layout Switcher]
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Switch to Next Keyboard Layout
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
@@ -14,7 +14,7 @@ _k_friendly_name=Accessibility
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
 Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings
 
 [kded5]
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
@@ -23,10 +23,10 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{37b89c36-8c7e-408f-b7a3-fcae0832c674}=Print,none,Start Screenshot Tool
-{4d0f1c7f-29b5-4139-adfa-7f64974a13e7}=Shift+Print,none,Take Full Screen Screenshot
-{4ecb29ad-40f8-4cdc-b56d-5deba39b8fb9}=Meta+Print,none,Take Active Window Screenshot
-{9f7280d6-ddd1-4582-98a5-d244ee103979}=Meta+Shift+Print,none,Take Rectangular Region Screenshot
+{37b89c36-8c7e-408f-b7a3-fcae0832c674}=none,none,Start Screenshot Tool
+{4d0f1c7f-29b5-4139-adfa-7f64974a13e7}=none,none,Take Full Screen Screenshot
+{4ecb29ad-40f8-4cdc-b56d-5deba39b8fb9}=none,none,Take Active Window Screenshot
+{9f7280d6-ddd1-4582-98a5-d244ee103979}=none,none,Take Rectangular Region Screenshot
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 
 [kmix]
@@ -75,7 +75,16 @@ Walk Through Windows of Current Application=Alt+`,none,Walk Through Windows of C
 Walk Through Windows of Current Application (Reverse)=Alt+~,none,Walk Through Windows of Current Application (Reverse)
 Walk Through Windows of Current Application Alternative=none,none,Walk Through Windows of Current Application Alternative
 Walk Through Windows of Current Application Alternative (Reverse)=none,none,Walk Through Windows of Current Application Alternative (Reverse)
-_k_friendly_name=System Settings
+_k_friendly_name=KWin
+
+[mediacontrol]
+_k_friendly_name=Media Controller
+mediavolumedown=none,none,Media volume down
+mediavolumeup=none,none,Media volume up
+nextmedia=Media Next,Media Next,Media playback next
+playpausemedia=Media Play,Media Play,Play/Pause media playback
+previousmedia=Media Previous,Media Previous,Media playback previous
+stopmedia=Media Stop,Media Stop,Stop media playback
 
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
@@ -100,6 +109,7 @@ activate task manager entry 6=Meta+6,Meta+6,Activate Task Manager Entry 6
 activate task manager entry 7=Meta+7,Meta+7,Activate Task Manager Entry 7
 activate task manager entry 8=Meta+8,Meta+8,Activate Task Manager Entry 8
 activate task manager entry 9=Meta+9,Meta+9,Activate Task Manager Entry 9
+activate widget 7=Alt+F1,none,Activate Application Launcher Widget
 clear-history=none,none,Clear Clipboard History
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
