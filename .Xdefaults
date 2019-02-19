@@ -1,5 +1,7 @@
 
-xrdb -merge ~/.Xresources (TO APPLY CHANGES)
+!xrdb -merge ~/.Xresources #(TO APPLY CHANGES)
+!xrdb -merge ~/.Xinitrc
+
 
 ! Grayscale dark theme modified
 ! special
@@ -64,23 +66,24 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 #URxvt.perl-lib: .urxvt/perl
-#URxvt.perl-ext-common: 
-default,matcher,clipboard,url-picker,font-size,notify
-URxvt.perl-ext-common: font-size
+#URxvt.perl-ext-common: default,matcher,clipboard,url-picker,font-size,notify
+URxvt.perl-ext-common: font-size,clipboard
+
+
 
 
 URxvt.keysym.C-Right: \033[1;5C
 URxvt.keysym.C-Left: \033[1;5D
-URxvt.keysym.C-C: perl:clipboard:copy
-URxvt.keysym.C-V: perl:clipboard:paste
+
+urxvt.keysym.Control-Shift-C: perl:clipboard:copy
+urxvt.keysym.Control-Shift-V: perl:clipboard:paste
 
 URxvt.keysym.C-f: perl:url-picker
 URxvt.url-picker.launcher: firefox
 URxvt.keysym.C-0xff0d: perl:url-picker
 
-
-#URxvt.clipboard.copycmd:  xclip -i -selection clipboard
-#URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+!#!URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+!#URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
 URxvt.font-size.step: 1
 URxvt.keysym.C-Up:     perl:font-size:increase
@@ -103,3 +106,4 @@ export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 XDG_CURRENT_DESKTOP=KDE
 export DESKTOP_SESSION=kde
  
+
