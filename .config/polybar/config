@@ -18,7 +18,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
+[bar/example1]
 monitor = ${env:MONITOR}
 width = 100%
 height = 27
@@ -39,7 +39,7 @@ border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 module-margin-left = 1
 module-margin-right = 2
@@ -48,9 +48,8 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = WunconSiji:pixelsize=10;1
 
-modules-left = bspwm i3
-modules-right = mpcScroll mpd filesystem xbacklight volume updates-arch-combined  memory cpu wlan eth battery temperature date 
-powermenu
+modules-left = bspwm i3 
+modules-right = mpcScroll mpd filesystem xbacklight volume updates-arch-combined  memory cpu wlan eth battery temperature date powermenu
 
 
 tray-position = right
@@ -64,7 +63,61 @@ tray-transparent = true
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = false
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+
+[bar/example]
+monitor = ${env:MONITOR}
+width = 75%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = WunconSiji:pixelsize=10;1
+
+modules-left = bspwm i3 
+modules-right = mpcScroll mpd filesystem xbacklight volume updates-arch-combined  memory cpu wlan eth battery temperature date powermenu
+
+
+tray-position = right
+tray-padding = 2
+;tray-detached=true
+
+;tray-maxsize=4
+tray-transparent = true
+;tray-background = ${root.background}
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev

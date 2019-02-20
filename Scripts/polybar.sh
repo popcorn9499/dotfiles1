@@ -11,6 +11,11 @@ MONITOR_LIST=$(xrandr --listmonitors | sed '1 d' | awk 'NF>1{print $NF}')
 
 
 for mon in $MONITOR_LIST; do
+    if [ $mon == 'VGA-0' ] 
+    then        
+        env MONITOR=$mon polybar example &
+    else
+        env MONITOR=$mon polybar example1 &
+    fi
     echo "Launching on monitor $mon"
-    env MONITOR=$mon polybar example &
 done

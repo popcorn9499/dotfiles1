@@ -166,3 +166,5 @@ Scripts/__pycache__/
 \.Xauthority
 
 \.config/Code/
+
+\.config/krecentconnections

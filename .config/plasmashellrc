@@ -1,0 +1,18 @@
+[PlasmaTransientsConfig]
+PreloadWeight=2
+
+[PlasmaViews][Panel 3]
+panelVisibility=2
+
+[PlasmaViews][Panel 3][Horizontal1280]
+thickness=36
+
+[PlasmaViews][Panel 3][Vertical1024]
+thickness=30
+
+[ScreenConnectors]
+0=VGA-0
+1=HDMI-0
+
+[Updates]
+performed=/usr/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js
