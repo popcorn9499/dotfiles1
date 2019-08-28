@@ -168,3 +168,15 @@ Scripts/__pycache__/
 \.config/Code/
 
 \.config/krecentconnections
+
+.config/nautilus/
+
+.config/kdeconnect/
+
+.config/chromium/
+
+.config/cef_user_data/
+
+.config/filezilla/
+
+.config/hexchatBak/
