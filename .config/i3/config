@@ -214,6 +214,10 @@ bindsym --release Print exec ./Scripts/uploader/fullScreenshot.sh
 bindsym Control+Shift+Print exec ./Scripts/uploader/windowScreenshot.sh
 
 
+bindsym $mod+t exec compton
+
+bindsym $mod+y exec killall compton
+
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
 exec --no-startup-id wmctrl -c Plasma
