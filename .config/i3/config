@@ -165,6 +165,7 @@ bindsym $mod+r mode "resize"
 #}
 
 exec_always --no-startup-id ./Scripts/polybar.sh 
+exec_always --no-startup-id ./Scripts/fixInvisibleI3Reload.sh
 
 #compositor
 exec compton
