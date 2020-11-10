@@ -77,9 +77,9 @@ end
 
 -- Define the image to load
 theme.titlebar_close_button_normal = imageLoad("Icons/window-close.svg")
-theme.titlebar_close_button_normal = gears.color.recolor_image(theme.titlebar_close_button_normal, "#FF00FF")
+theme.titlebar_close_button_normal = gears.color.recolor_image(theme.titlebar_close_button_normal, "#0da3de")
 theme.titlebar_close_button_focus  = imageLoad("Icons/window-close.svg")
-theme.titlebar_close_button_focus = gears.color.recolor_image(theme.titlebar_close_button_focus, "#0da3de")
+theme.titlebar_close_button_focus = gears.color.recolor_image(theme.titlebar_close_button_focus, "#FF00FF")
 
 
 
