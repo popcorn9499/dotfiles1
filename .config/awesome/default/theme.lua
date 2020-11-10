@@ -72,7 +72,7 @@ theme.menu_width  = dpi(100)
 --theme.bg_widget = "#cc0000"
 
 function imageLoad(path)
-    return gears.surface(gears.filesystem.get_configuration_dir() .. path)
+    return gears.filesystem.get_configuration_dir() .. path
 end
 
 -- Define the image to load
