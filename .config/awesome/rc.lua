@@ -197,7 +197,19 @@ client.connect_signal("property::position", function(c)
             d.height=c.height
         end
 
-    end
+client.connect_signal("manage", function(c)
+    if (icon == nil) then --set icon if none exist
+        local icon = menubar.utils.lookup_icon(c.instance) -- first see if it screwed up and didnt look right.
+        local lower_icon = menubar.utils.lookup_icon(c.instance:lower()) --or the icon is all lower case
+        if (icon ~= nil) then
+            local new_icon = gears.surface(icon)
+            c.icon = new_icon._native
+        elseif lower_icon ~= nil then 
+            local new_icon = gears.surface(lower_icon)
+            c.icon = new_icon._native
+        else then -- set icons for clients that are missing them
+            c.icon = gears.surface(gears.filesystem.get_configuration_dir() .. "/x11.png")._native
+        end
     end
 end)
 
