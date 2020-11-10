@@ -118,7 +118,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
          }
      }
  
-     -- Create a tasklist widget
+     --CCreate a tasklist widget
 
      s.mytasklist = awful.widget.tasklist {
         screen   = s,
@@ -136,7 +136,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                     forced_width  = 5,
                     forced_height = 24,
                     thickness     = 1,
-                    color         = '#777777',
+                    color         = '#000000',
                     widget        = wibox.widget.separator
                 },
                 valign = 'center',
@@ -166,12 +166,94 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
             nil,
             create_callback = function(self, c, index, objects) --luacheck: no unused args
                 self:get_children_by_id('clienticon')[1].client = c
+                
             end,
             layout = wibox.layout.align.vertical,
         }
     }
-     
  
+    local bg = wibox.container.background()
+    bg:set_bg("#ff0000")
+    
+    local tb1 = wibox.widget.textbox()
+    local tb2 = wibox.widget {
+        checked       = false,
+        color         = beautiful.bg_normal,
+        paddings      = 2,
+        shape         = gears.shape.circle,
+        widget        = wibox.widget.checkbox
+    }--wibox.widget.textbox("bar")
+
+    tb2.checked=true
+    tb1:set_text("foo")
+    --tb2:set_text("bar")
+    
+    local l = wibox.layout.fixed.vertical()
+    --l:add(tb1)
+    l:add(tb2)
+    
+    bg:set_widget(l)
+
+    local box_pressed = function(widget,lx, ly, button, mods)
+       awful.spawn("notify-send box pressed ")
+
+       print(lx)
+       print(ly)
+       print(button)
+       print(mods)
+       --print(find_widgets_result)
+    for key, value in pairs(mods) do
+        print(key, value)
+    end
+
+    --print(awful.tasklist.filter.allscreen())
+
+       --find_widgets_result.checked = not tb2.checked
+       tb2.checked= not tb2.checked
+    end
+
+    tb2:connect_signal("button::press", box_pressed)
+
+    -- tb.connect_signal("button::press, function (c)
+    --     awful.spawn("notify-send test1")
+
+    --end)
+    -- local bg = wibox.widget {
+    --     {
+    --         {
+    --             text = "foo",
+    --             widget = wibox.widget.textbox
+    --         },
+    --         {
+    --             text = "bar",
+    --             widget = wibox.widget.textbox
+    --         },
+    --         layout = wibox.layout.fixed.vertical
+    --     },
+    --     bg = "#ff0000",
+    --     widget = wibox.container.background
+    -- }
+    
+--     local common = require("awful.widget.common")
+--     local function list_update(w, buttons, label, data, objects)
+--         common.list_update(w, buttons, label, data, objects)
+--         awful.spawn("notify-send test ")
+--         w:set_max_widget_size(300)
+--     end
+
+--     tasklist_buttons = {
+--                 awful.button({ }, 1, function (c) c:activate { context = "tasklist", action = "toggle_minimization" }
+--                 end),
+--                 awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
+--                 awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
+--                 awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
+--             }
+
+-- s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist_buttons, nil, list_update, wibox.layout.flex.horizontal())
+ 
+
+
+
      -- Create the wibox
      s.mywibox = awful.wibar({ position = "bottom", screen = s, height = 30})
 
@@ -189,6 +271,8 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            bg,
+
             mykeyboardlayout,
             s.systray,
             mytextclock,
