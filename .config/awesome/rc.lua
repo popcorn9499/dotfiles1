@@ -211,7 +211,7 @@ client.connect_signal("manage", function(c)
         elseif lower_icon ~= nil then 
             local new_icon = gears.surface(lower_icon)
             c.icon = new_icon._native
-        else then -- set icons for clients that are missing them
+        else-- set icons for clients that are missing them
             c.icon = gears.surface(gears.filesystem.get_configuration_dir() .. "/x11.png")._native
         end
     end
