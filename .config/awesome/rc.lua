@@ -202,7 +202,7 @@ client.connect_signal("property::position", function(c)
 end)
 
 client.connect_signal("manage", function(c)
-    if (icon == nil) then --set icon if none exist
+    if (c.icon == nil) then --set icon if none exist
         local icon = menubar.utils.lookup_icon(c.instance) -- first see if it screwed up and didnt look right.
         local lower_icon = menubar.utils.lookup_icon(c.instance:lower()) --or the icon is all lower case
         if (icon ~= nil) then
