@@ -81,8 +81,13 @@ globalkeys = gears.table.join(
         awful.util.spawn("mpc --host=192.168.1.119 prev", false)
     end),
 
-    --Screenshot toolsq
+    --Screenshot tools
+    awful.key({ "Control",           }, "Print", function () awful.spawn("/home/popcorn9499/Scripts/uploader/selectionScreenshot.sh") end,
+              {description = "Screenshot a Selection", group = "Screenshots"}),
+    awful.key({         }, "Print", function () awful.spawn("/home/popcorn9499/Scripts/uploader/fullScreenshot.sh") end,
+              {description = "Full a Selection", group = "Screenshots"}),
 
+              
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
