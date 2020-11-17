@@ -166,6 +166,17 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
             nil,
             create_callback = function(self, c, index, objects) --luacheck: no unused args
                 self:get_children_by_id('clienticon')[1].client = c
+                local tooltip = awful.tooltip({
+                    objects = { self },
+                    timer_function = function()
+                      return c.name
+                    end,
+                  })
+                
+                  -- Then you can set tooltip props if required
+                  tooltip.align = "left"
+                  tooltip.mode = "outside"
+                  tooltip.preferred_positions = {"left"}
                 
             end,
             layout = wibox.layout.align.vertical,
