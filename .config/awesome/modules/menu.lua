@@ -124,12 +124,60 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
         screen   = s,
         filter   = awful.widget.tasklist.filter.currenttags,
         buttons  = {
-            awful.button({ }, 1, function (c) c:activate { context = "tasklist", action = "toggle_minimization" }
+            awful.button({ }, 1, function (c)
+
+                if cl_menu then
+                    cl_menu:hide()
+                    cl_menu=nil
+                else
+                    client_num=0
+                    client_list={}
+                    for i, cl in pairs(client.get()) do
+                        if cl.class == c.class then
+                            client_num = client_num + 1
+                            client_list[i]=
+                              {cl.name,
+                               function()
+                                   client.focus = cl
+                                   awful.tag.viewonly(cl:tags()[1])
+                                   cl:raise()
+                               end,
+                               cl.icon
+                              }
+                       end
+                    end
+            
+                    if client_num > 1 then
+                        cl_menu=awful.menu({items = client_list, theme = {width=300}})
+                        cl_menu:show()
+                    else
+                        client.focus = c
+                        awful.tag.viewonly(c:tags()[1])
+                        c:raise() 
+                    end
+                end
             end),
             awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
             awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
             awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
         },
+        source = function()
+            -- Get all clients
+            local cls = client.get()
+    
+            -- Filter by an existing filter function and allowing only one client per class
+            local result = {}
+            local class_seen = {}
+            for _, c in pairs(cls) do
+                if awful.widget.tasklist.filter.currenttags(c, s) then
+                    if not class_seen[c.class] then
+                        class_seen[c.class] = true
+                        table.insert(result, c)
+                    end
+                end
+            end
+            return result
+        end,
         layout   = {
             spacing_widget = {
                 {
