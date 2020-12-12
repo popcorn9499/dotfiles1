@@ -15,6 +15,12 @@ client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
     local buttons = gears.table.join(
         awful.button({ }, 1, function()
+            if (c.maximized == true) then --restored window to previous size when attempting to draw
+                c.maximized_horizontal = false
+                c.maximized_vertical   = false
+                c.maximized            = false
+                c:raise()
+            end
             c:emit_signal("request::activate", "titlebar", {raise = true})
             awful.mouse.client.move(c)
             
