@@ -8,6 +8,7 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local musicPlayer = require("modules.programs.musicPlayer")
 
 require("modules.config")
 
@@ -87,7 +88,11 @@ globalkeys = gears.table.join(
     awful.key({         }, "Print", function () awful.spawn("/home/popcorn9499/Scripts/uploader/fullScreenshot.sh") end,
               {description = "Full a Selection", group = "Screenshots"}),
 
-              
+    
+    --programs
+    awful.key({ modkey, "Control" }, "m", function() createMediaWindow() end,
+    {description = "open a  music player", group = "Programs"}),
+
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
