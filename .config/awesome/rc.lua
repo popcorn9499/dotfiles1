@@ -183,24 +183,6 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
---handle ncmpcpp visualizer behind window.
-client.connect_signal("property::position", function(c) 
-
-    if (c.name == "ncmpcpp") then --ncmpcpp cava follow behind. 
-        --improve this later on. spawn a cava window. make it allow for multiple ncmpcpp and cava windows etc
-        for _, d in pairs(client.get()) do
-            if (d.name == "cava") then
-                d.x = c.x
-                d.y = c.y
-                d.above = true
-                c.above = true
-                d.width = c.width
-                d.height=c.height
-            end
-        end
-    end
-end)
-
 client.connect_signal("manage", function(c)
     if (c.icon == nil) then --set icon if none exist
         local icon = menubar.utils.lookup_icon(c.instance) -- first see if it screwed up and didnt look right.
