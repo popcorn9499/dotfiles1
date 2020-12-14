@@ -18,6 +18,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+require("modules.config")
 require("modules.hotkey")
 require("modules.menu")
 require("modules.titlebar")
@@ -102,8 +103,7 @@ clientbuttons = gears.table.join(
 )
 
 
--- }}}
-
+-- {{{ Rules
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
