@@ -125,14 +125,14 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
         filter   = awful.widget.tasklist.filter.currenttags,
         buttons  = {
             awful.button({ }, 1, function (c)
-
-                if cl_menu then
+                print(cl_menu)
+                if cl_menu then --handles clearing the context menu that was created on clicking a second time.
                     cl_menu:hide()
                     cl_menu=nil
-                else
+                else --creates a context menu with all the "windows" open
                     client_num=0
                     client_list={}
-                    for i, cl in pairs(client.get()) do
+                    for i, cl in pairs(client.get(s)) do --get all the clients for that screen
                         if cl.class == c.class then
                             client_num = client_num + 1
                             client_list[i]=
