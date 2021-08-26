@@ -261,9 +261,9 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
        print(button)
        print(mods)
        --print(find_widgets_result)
-    for key, value in pairs(mods) do
-        print(key, value)
-    end
+        for key, value in pairs(mods) do
+            print(key, value)
+        end
 
     --print(awful.tasklist.filter.allscreen())
 
