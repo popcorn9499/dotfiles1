@@ -314,7 +314,7 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 
 
      -- Create the wibox
-     s.mywibox = awful.wibar({ position = "bottom", screen = s, height = 30, ontop = true})
+     s.mywibox = awful.wibar({ position = "bottom", screen = s, height = 30, ontop = false})
 
      s.systray = wibox.widget.systray()
 
