@@ -82,13 +82,21 @@ globalkeys = gears.table.join(
         awful.util.spawn("mpc --host=192.168.1.119 prev", false)
     end),
 
-    --Screenshot tools
+    --Counter tools
+    awful.key({ "Mod1",          }, "Insert", function () awful.spawn("/home/popcorn9499/Scripts/counterTools/start.sh counterUp.py") end,
+              {description = "Increase Counter", group = "Stream Tools"}),
+    awful.key({ "Mod1",        }, "Home", function () awful.spawn("/home/popcorn9499/Scripts/counterTools/start.sh counterDown.py") end,
+              {description = "Decrease Counter", group = "Stream Tools"}),
+
+    -- Screenshot tools
     awful.key({ "Control",           }, "Print", function () awful.spawn("/home/popcorn9499/Scripts/uploader/selectionScreenshot.sh") end,
               {description = "Screenshot a Selection", group = "Screenshots"}),
     awful.key({         }, "Print", function () awful.spawn("/home/popcorn9499/Scripts/uploader/fullScreenshot.sh") end,
               {description = "Full a Selection", group = "Screenshots"}),
 
     
+
+
     --programs
     awful.key({ modkey, "Control" }, "m", function() createMediaWindow() end,
     {description = "open a  music player", group = "Programs"}),
