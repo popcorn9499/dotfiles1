@@ -17,6 +17,18 @@
 	"tooltip": true,
 },
 
+"custom/updateChecker": {
+	"format": "{}",
+	"format-alt": "{alt}: {}",
+	"format-alt-click": "click",
+	"interval": 3600,
+	"return-type": "string",
+	"exec": "$HOME/.config/hypr/UserScripts/updateChecker.sh",
+	//"exec": "$HOME/.config/hypr/UserScripts/Weather.py",
+	"exec-if": "ping wttr.in -c1",
+	"tooltip": true,
+},
+
 "custom/file_manager": {
 	"format": " ",
 	"on-click": "thunar",
